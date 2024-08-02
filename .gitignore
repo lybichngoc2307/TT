@@ -1,0 +1,34 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore environment variables file
+.env
+
+# Ignore virtual environment folders
+venv/
+env/
+
+# Ignore log files
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled code
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+
+# Ignore database files
+*.sqlite3
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore custom library folders
+lib/undetected_chromedriver/
