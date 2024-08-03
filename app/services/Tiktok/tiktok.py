@@ -8,8 +8,6 @@ import base64
 import io
 import os
 from selenium.webdriver import ActionChains
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
@@ -17,10 +15,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 #undetected_chromedriver
 chrome_options = uc.ChromeOptions()
 chrome_options.add_argument("--disable-notifications")
-
-# # Tắt thông báo "Chrome is being controlled by automated test software"
-# chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-# chrome_options.add_experimental_option('useAutomationExtension', False)
 
 # Thay đổi User-Agent 
 chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
@@ -30,43 +24,31 @@ password = "@K4ay%7H022X"
 
 browser = uc.Chrome(options=chrome_options)
 browser.get('https://www.tiktok.com/login/phone-or-email/email')
-
 time.sleep(5)
 
-
-# user-pass
+#us-pwd
 username_field = browser.find_element(By.NAME, "username")
 username_field.send_keys(username)
-
 password_field = browser.find_element(By.CSS_SELECTOR, 'input[placeholder="Password"]')
 password_field.send_keys(password)
 
 #login
 login_button = browser.find_element(By.XPATH, '//*[@id="loginContainer"]/div[1]/form/button')
 login_button.click()
-
 time.sleep(10)
 
+#Bypass captcha
 try:
-    # Lấy phần tử ảnh CAPTCHA
     image_captcha_element = browser.find_element(By.CSS_SELECTOR, "#captcha-verify-image")
-
-    # Lấy URL của ảnh CAPTCHA
     captcha_src = image_captcha_element.get_attribute("src")
-
-    # Đường dẫn tương đối tới thư mục lưu ảnh CAPTCHA
     folder_path = "./captcha_images"
-
-    # Kiểm tra nếu thư mục chưa tồn tại, thì tạo mới
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-
-    # Tải xuống ảnh CAPTCHA
     response = requests.get(captcha_src)
     image = Image.open(io.BytesIO(response.content))
     image.save(os.path.join(folder_path, "captcha_image.png"))
 
-    # Đọc ảnh CAPTCHA và mã hóa base64
+    # Mã hóa ảnh base64
     with open("captcha_image.png", "rb") as image_file:
         image_base64 = base64.b64encode(image_file.read()).decode('utf-8')
 
@@ -94,29 +76,25 @@ try:
     else:
         print("Failed to create job")
 
-    
-
     # Gửi yêu cầu POST để nhận kết quả
     get_result_url = "https://omocaptcha.com/api/getJobResult"
     data = {
         "api_token": "apitoken8t6x9z5xxy6l8mysc0gqst6mutasthtpuw5q2i5nsy2yxmrnmjijmbl4rlnkg31722476177",
         "job_id": job_id
     }
-
-    # Chờ một khoảng thời gian trước khi gửi yêu cầu lấy kết quả
-    time.sleep(10)  # Chờ 10 giây (có thể điều chỉnh)
+    time.sleep(10)  
 
     response = requests.post(get_result_url, headers=headers, json=data)
     result = response.json()
 
+    #trả về tọa độ ảnh
     if result['success'] and result['status'] == 'success':
         coordinates = result['result']
         print(f"Coordinates received: {coordinates}")
     else:
         print("Failed to get result")
     
-
-    
+    #xác định ảnh captcha
     image_captcha_element = browser.find_element(By.XPATH, '//*[@id="captcha-verify-image"]')
 
     # Giải mã tọa độ từ kết quả nhận được
@@ -124,7 +102,7 @@ try:
     x1, y1, x2, y2 = int(coords[0]), int(coords[1]), int(coords[2]), int(coords[3])
     print(f"Coordinates: ({x1}, {y1}), ({x2}, {y2})")
 
-    # Chạy đoạn mã JavaScript để click vào tọa độ trên ảnh CAPTCHA
+    # click vào tọa độ trên ảnh CAPTCHA
     simulate_click_script = f"""
     function simulateClick(element, offsetX, offsetY) {{
         var rect = element.getBoundingClientRect();
@@ -139,9 +117,7 @@ try:
     simulateClick(imageCaptcha, {x2}, {y2});
     """
     browser.execute_script(simulate_click_script)
-
     time.sleep(5)
-
 
     # Click nút submit CAPTCHA
     submit_button_script = """
@@ -159,7 +135,52 @@ try:
     except Exception as e:
         print(f"Error executing script for clicking submit button: {e}")
 
+#nếu không có, bỏ qua
 except:
     post = "https://www.tiktok.com/@_embegem_/video/7366678218008579345"
     browser.get(post)
 
+#AUTO LIKE
+like_button = browser.find_element(By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]')
+browser.execute_script("window.scrollTo(0, 0);")
+time.sleep(10)
+like_button.click()
+time.sleep(5)
+
+#AUTO CMT
+comment_text = browser.find_element(By.XPATH, '//div[@class="notranslate public-DraftEditor-content" and @contenteditable="true"]')
+#browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+browser.execute_script("arguments[0].scrollIntoView(false);", comment_text)
+time.sleep(10)
+#nội dung comment
+comment_text.send_keys("hello")
+#post
+post_button = browser.find_element(By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div/div[3]/div[1]/div/div/div[2]')
+post_button.click()
+
+#AUTO SAVE
+save_button = browser.find_element(By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[3]')
+#browser.execute_script("arguments[0].scrollIntoView(true);", luu_button)
+browser.execute_script("window.scrollTo(0, 0);")
+time.sleep(10)
+save_button.click()
+
+#AUTO REPORT
+wait = WebDriverWait(browser, 10)
+report_button = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[1]/div[1]/div[4]/div[2]/div[2]/div[7]')))
+# Di chuột đến
+actions = ActionChains(browser)
+actions.move_to_element(report_button).perform()
+time.sleep(5) 
+report_option = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div/div[1]/div[1]/div[4]/div[2]/div[2]/div[7]/div/ul/li[1]')))
+
+#AUTO SHARE
+wait = WebDriverWait(browser, 10)
+share_button = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="main-content-video_detail"]/div/div[2]/div/div[1]/div[1]/div[3]/div[2]/button[4]')))
+# Di chuyển chuột 
+actions = ActionChains(browser)
+actions.move_to_element(share_button).perform()
+time.sleep(5)
+repost_option = wait.until(EC.element_to_be_clickable((By.XPATH, '//span[contains(text(),"Repost")]')))
+#REPOST - ĐĂNG LẠI 
+repost_option.click()
