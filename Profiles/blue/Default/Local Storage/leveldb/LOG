@@ -1,0 +1,4 @@
+2024/08/12-09:25:36.388 3830 Creating DB C:\Users\admin\TT\Profiles\blue\Default\Local Storage\leveldb since it was missing.
+2024/08/12-09:25:36.423 3830 Reusing MANIFEST C:\Users\admin\TT\Profiles\blue\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/12-09:25:46.792 395c Level-0 table #5: started
+2024/08/12-09:25:46.835 395c Level-0 table #5: 795418 bytes OK

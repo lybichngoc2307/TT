@@ -1,0 +1,5 @@
+2024/08/12-09:41:51.855 43c0 Creating DB C:\Users\admin\TT\Profiles\embe\Default\Local Storage\leveldb since it was missing.
+2024/08/12-09:41:51.895 43c0 Reusing MANIFEST C:\Users\admin\TT\Profiles\embe\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/12-09:42:48.559 1c0c Level-0 table #5: started
+2024/08/12-09:42:48.584 1c0c Level-0 table #5: 795173 bytes OK
+2024/08/12-09:42:48.587 1c0c Delete type=0 #3
