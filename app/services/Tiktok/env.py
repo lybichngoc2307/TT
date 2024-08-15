@@ -6,13 +6,16 @@ class login:
 class captcha:
     captcha_image =  '//*[@id="captcha-verify-image"]' #"#captcha-verify-image"
     api = "apitoken8t6x9z5xxy6l8mysc0gqst6mutasthtpuw5q2i5nsy2yxmrnmjijmbl4rlnkg31722476177"
-
+    drag_captcha = '//div[contains(text(),"Drag the slider to fit the puzzle")]'
+    select_2obj = 'Select 2 objects that are the same shape:'
+    #<div class="VerifyBar___StyledDiv-sc-12zaxoy-0 hRJhHT">Select 2 objects that are the same shape:</div>
 class auto:
     like = '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]'
     
     cmt_text = '//div[@class="notranslate public-DraftEditor-content" and @contenteditable="true"]'
-    cmt_post = '//*[@id="main-content-video_detail"]/div/div[2]/div/div[3]/div[1]/div/div/div[2]'
-
+    cmt_post = '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[2]/div[1]/div/div/div[2]'
+    #//*[@id="main-content-video_detail"]/div/div[2]/div/div[3]/div[1]/div/div/div[2]'
+                
     save = '//*[@id="main-content-video_detail"]/div/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[3]'
 
     share = '//*[@id="main-content-video_detail"]/div/div[2]/div/div[1]/div[1]/div[3]/div[2]/button[4]'

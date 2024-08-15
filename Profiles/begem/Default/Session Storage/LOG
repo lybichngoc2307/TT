@@ -1,2 +1,3 @@
-2024/08/12-09:06:04.840 21a0 Creating DB C:\Users\admin\TT\Profiles\begem\Default\Session Storage since it was missing.
-2024/08/12-09:06:04.900 21a0 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Session Storage/MANIFEST-000001
+2024/08/15-09:37:20.539 1900 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Session Storage/MANIFEST-000001
+2024/08/15-09:37:20.541 1900 Recovering log #3
+2024/08/15-09:37:20.550 1900 Reusing old log C:\Users\admin\TT\Profiles\begem\Default\Session Storage/000003.log 

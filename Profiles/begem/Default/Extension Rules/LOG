@@ -1,2 +1,3 @@
-2024/08/12-09:06:04.354 23fc Creating DB C:\Users\admin\TT\Profiles\begem\Default\Extension Rules since it was missing.
-2024/08/12-09:06:04.374 23fc Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Extension Rules/MANIFEST-000001
+2024/08/15-09:36:36.984 1e10 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Extension Rules/MANIFEST-000001
+2024/08/15-09:36:36.985 1e10 Recovering log #3
+2024/08/15-09:36:36.985 1e10 Reusing old log C:\Users\admin\TT\Profiles\begem\Default\Extension Rules/000003.log 

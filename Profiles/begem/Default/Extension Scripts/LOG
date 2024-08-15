@@ -1,2 +1,3 @@
-2024/08/12-09:06:04.378 23fc Creating DB C:\Users\admin\TT\Profiles\begem\Default\Extension Scripts since it was missing.
-2024/08/12-09:06:04.384 23fc Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Extension Scripts/MANIFEST-000001
+2024/08/15-09:36:36.988 1e10 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Extension Scripts/MANIFEST-000001
+2024/08/15-09:36:36.989 1e10 Recovering log #3
+2024/08/15-09:36:36.989 1e10 Reusing old log C:\Users\admin\TT\Profiles\begem\Default\Extension Scripts/000003.log 

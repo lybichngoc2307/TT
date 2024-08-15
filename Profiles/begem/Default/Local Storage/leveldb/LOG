@@ -1,2 +1,5 @@
-2024/08/12-09:06:04.841 22b8 Creating DB C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb since it was missing.
-2024/08/12-09:06:04.909 22b8 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/15-09:37:20.432 15ec Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/15-09:37:20.442 15ec Recovering log #3
+2024/08/15-09:37:20.443 15ec Level-0 table #3: started
+2024/08/15-09:37:20.455 15ec Level-0 table #3: 83038 bytes OK
+2024/08/15-09:37:20.462 15ec Delete type=0 #3
