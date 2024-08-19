@@ -1,5 +1,5 @@
-2024/08/15-09:36:13.685 283c Reusing MANIFEST C:\Users\admin\TT\Profiles\banhbao\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/15-09:36:13.693 283c Recovering log #7
-2024/08/15-09:36:13.694 283c Level-0 table #9: started
-2024/08/15-09:36:13.705 283c Level-0 table #9: 21792 bytes OK
-2024/08/15-09:36:13.711 283c Delete type=0 #7
+2024/08/16-13:52:38.537 351c Reusing MANIFEST C:\Users\admin\TT\Profiles\banhbao\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/16-13:52:38.554 351c Recovering log #104
+2024/08/16-13:52:38.555 351c Level-0 table #106: started
+2024/08/16-13:52:38.571 351c Level-0 table #106: 31473 bytes OK
+2024/08/16-13:52:38.588 351c Delete type=0 #104

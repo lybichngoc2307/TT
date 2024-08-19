@@ -1,0 +1,6 @@
+2024/08/16-13:54:52.279 4a88 Reusing MANIFEST C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/16-13:54:52.289 4a88 Recovering log #43
+2024/08/16-13:54:52.294 4a88 Reusing old log C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/000043.log 
+2024/08/16-13:56:53.991 a88 Level-0 table #46: started
+2024/08/16-13:56:53.998 a88 Level-0 table #46: 45598 bytes OK
+2024/08/16-13:56:54.000 a88 Delete type=0 #43

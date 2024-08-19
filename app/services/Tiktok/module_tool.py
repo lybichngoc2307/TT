@@ -32,7 +32,7 @@ def clear_chrome_process():
         system('taskkill /im chrome.exe')
     except:
         pass
-    system('cls')
+    #system('cls')
 
 if __name__ == "__main__":
     create_profiles_folder()  # Tạo thư mục Profiles nếu chưa tồn tại

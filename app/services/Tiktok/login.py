@@ -14,8 +14,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 import env
 
 def login_tiktok(driver):
-    username = "user6762240292153"
-    password = "@K4ay%7H022X"
+    # username = "user6762240292153"
+    # password = "@K4ay%7H022X"
+    username = "lyngocht5328@gmail.com"
+    password = "Lyngoc237@"
     try:
         username_field = driver.find_element(By.XPATH, env.login.username)
         username_field.send_keys(username)

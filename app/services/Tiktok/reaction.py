@@ -8,14 +8,12 @@ import env
 
 
 def like(browser):
-    try:
-        time.sleep(10)
+    try:      
         like_button = browser.find_element(By.XPATH, env.auto.like)
         browser.execute_script("window.scrollTo(0, 0);")
-        time.sleep(10)
+        time.sleep(5)
         like_button.click()
         print("Like done!")
-        time.sleep(5)
     except NoSuchElementException:
         print("Like button not found.")
     except Exception as e:
@@ -25,11 +23,11 @@ def comment(browser, cmt):
     try:
         comment_text = browser.find_element(By.XPATH, env.auto.cmt_text)
         browser.execute_script("arguments[0].scrollIntoView(false);", comment_text)
-        time.sleep(10)
+        time.sleep(5)
         comment_text.send_keys(cmt)
         print("sent!!!")
         post_button = browser.find_element(By.XPATH, env.auto.cmt_post)
-        print("post")
+        print("posted!")
         post_button.click()
         print("Comment done!")
     # except NoSuchElementException:
@@ -41,8 +39,7 @@ def save(browser):
     try:
         browser.execute_script("window.scrollTo(0, 0);")
         save_button = browser.find_element(By.XPATH, env.auto.save)
-        time.sleep(10)
-        
+        time.sleep(5)       
         if save_button:
             save_button.click()
             time.sleep(2)
@@ -55,7 +52,7 @@ def save(browser):
 
 def share(browser):
     try:
-        wait = WebDriverWait(browser, 10)
+        wait = WebDriverWait(browser, 5)
         share_button = wait.until(EC.presence_of_element_located((By.XPATH, env.auto.share)))
         actions = ActionChains(browser)
         actions.move_to_element(share_button).perform()
@@ -70,12 +67,12 @@ def share(browser):
 
 def report(browser):
     try:
-        wait = WebDriverWait(browser, 10)
+        wait = WebDriverWait(browser, 5)
         report_button = wait.until(EC.presence_of_element_located((By.XPATH, env.auto.report_ops)))
         actions = ActionChains(browser)
-        time.sleep(10) 
+        time.sleep(5) 
         actions.move_to_element(report_button).perform()
-        time.sleep(10)
+        time.sleep(5)
         
         report_option = browser.find_element(By.XPATH, env.auto.report)
         report_option.click()

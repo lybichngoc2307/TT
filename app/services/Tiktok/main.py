@@ -1,5 +1,5 @@
 from module_tool import create_profiles_folder , get_profiles , clear_chrome_process , delete_profile
-from create_profiles import create_profile , manager_profiles
+from create_profiles import create_profile , manager_profiles, perform_action
 from os import system
 import threading
 
@@ -20,24 +20,64 @@ def main():
                     create_profile(name.strip())
 
             #system('cls')
+        # elif option_choice == 2:
+        #     profiles = get_profiles()  # lấy danh sách folder profiles
+        #     if len(profiles) != 0:  # kiểm tra xem danh sách có profile không
+        #         selected_indices = input("Enter Profile Indices (e.g., 1,2,3): ")
+        #         selected_indices = [int(index.strip()) for index in selected_indices.split(',')]
+                
+        #         drivers = []
+        #         threads = []
+        #         for index in selected_indices:
+        #             profile_name_open = profiles[index - 1]
+        #             print(f'Opening: {profile_name_open}')
+        #             thread = threading.Thread(target=lambda: drivers.append(manager_profiles(profile_name_open)))
+        #             #thread = threading.Thread(target=manager_profiles, args=(profile_name_open,))
+
+        #             thread.start()
+        #             threads.append(thread)
+                
+        #         for thread in threads:
+        #             thread.join()  # Đảm bảo tất cả các luồng đã hoàn thành
+                
+        #         if drivers:
+        #             perform_action(drivers)  # Thực hiện hành động trên tất cả các trình duyệt đã mở
+
+        #         #system('cls')
+        #     else:
+        #         print("NOT FOUND CHROME PROFILES => CREATE !")
+        #         return main()
         elif option_choice == 2:
             profiles = get_profiles()  # lấy danh sách folder profiles
             if len(profiles) != 0:  # kiểm tra xem danh sách có profile không
                 selected_indices = input("Enter Profile Indices (e.g., 1,2,3): ")
                 selected_indices = [int(index.strip()) for index in selected_indices.split(',')]
                 
+                drivers = []
                 threads = []
+            
                 for index in selected_indices:
                     profile_name_open = profiles[index - 1]
                     print(f'Opening: {profile_name_open}')
-                    thread = threading.Thread(target=manager_profiles, args=(profile_name_open,))
+                    thread = threading.Thread(target=lambda: drivers.append(manager_profiles(profile_name_open)))
                     thread.start()
                     threads.append(thread)
                 
                 for thread in threads:
-                    thread.join()  # Đảm bảo tất cả các luồng đã hoàn thành
+                    thread.join()  
+                while True:
+                    actions = []  
+                    for i in range(len(drivers)):
+                        action = input(f"Choose action for profile {selected_indices[i]} (like, save, comment, share, report, exit): ")
+                        actions.append(action.strip().lower())
+                    
+                    if drivers:
+                        perform_action(drivers, actions)  
 
-                #system('cls')
+                    # Kiểm tra nếu tất cả các profile đã đóng, thoát khỏi vòng lặp
+                    if not drivers:
+                        print("All profiles have been closed.")
+                        break
             else:
                 print("NOT FOUND CHROME PROFILES => CREATE !")
                 return main()
