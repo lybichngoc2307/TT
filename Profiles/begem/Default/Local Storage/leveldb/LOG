@@ -1,3 +1,17 @@
-2024/08/16-09:58:18.628 2c70 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/16-09:58:18.638 2c70 Recovering log #40
-2024/08/16-09:58:18.642 2c70 Reusing old log C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb/000040.log 
+2024/08/19-08:07:44.341 2120 Reusing MANIFEST C:\Users\admin\TT\Profiles\begem\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/19-08:07:44.349 2120 Recovering log #40
+2024/08/19-08:07:44.353 2120 Level-0 table #43: started
+2024/08/19-08:07:44.374 2120 Level-0 table #43: 39500 bytes OK
+2024/08/19-08:07:44.382 2120 Delete type=0 #40
+2024/08/19-08:11:11.824 2120 Level-0 table #46: started
+2024/08/19-08:11:11.837 2120 Level-0 table #46: 39831 bytes OK
+2024/08/19-08:11:11.842 2120 Delete type=0 #44
+2024/08/19-08:11:11.843 3ed0 Compacting 4@0 + 1@1 files
+2024/08/19-08:11:11.859 3ed0 Generated table #47@0: 54 keys, 93393 bytes
+2024/08/19-08:11:11.859 3ed0 Compacted 4@0 + 1@1 files => 93393 bytes
+2024/08/19-08:11:11.860 3ed0 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/08/19-08:11:11.862 3ed0 Delete type=2 #36
+2024/08/19-08:11:11.863 3ed0 Delete type=2 #38
+2024/08/19-08:11:11.863 3ed0 Delete type=2 #41
+2024/08/19-08:11:11.863 3ed0 Delete type=2 #43
+2024/08/19-08:11:11.863 3ed0 Delete type=2 #46

@@ -1,5 +1,15 @@
-2024/08/16-13:52:38.537 351c Reusing MANIFEST C:\Users\admin\TT\Profiles\banhbao\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/16-13:52:38.554 351c Recovering log #104
-2024/08/16-13:52:38.555 351c Level-0 table #106: started
-2024/08/16-13:52:38.571 351c Level-0 table #106: 31473 bytes OK
-2024/08/16-13:52:38.588 351c Delete type=0 #104
+2024/08/16-13:54:39.006 46bc Reusing MANIFEST C:\Users\admin\TT\Profiles\banhbao\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/16-13:54:39.021 46bc Recovering log #107
+2024/08/16-13:54:39.026 46bc Reusing old log C:\Users\admin\TT\Profiles\banhbao\Default\Local Storage\leveldb/000107.log 
+2024/08/16-13:56:50.796 2914 Level-0 table #110: started
+2024/08/16-13:56:50.802 2914 Level-0 table #110: 28703 bytes OK
+2024/08/16-13:56:50.805 2914 Delete type=0 #107
+2024/08/16-13:56:50.806 46bc Compacting 4@0 + 1@1 files
+2024/08/16-13:56:50.832 46bc Generated table #111@0: 60 keys, 876724 bytes
+2024/08/16-13:56:50.833 46bc Compacted 4@0 + 1@1 files => 876724 bytes
+2024/08/16-13:56:50.834 46bc compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/08/16-13:56:50.835 46bc Delete type=2 #98
+2024/08/16-13:56:50.835 46bc Delete type=2 #101
+2024/08/16-13:56:50.835 46bc Delete type=2 #103
+2024/08/16-13:56:50.835 46bc Delete type=2 #106
+2024/08/16-13:56:50.836 46bc Delete type=2 #110

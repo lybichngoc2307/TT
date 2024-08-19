@@ -1,6 +1,15 @@
-2024/08/16-13:54:52.279 4a88 Reusing MANIFEST C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/16-13:54:52.289 4a88 Recovering log #43
-2024/08/16-13:54:52.294 4a88 Reusing old log C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/000043.log 
-2024/08/16-13:56:53.991 a88 Level-0 table #46: started
-2024/08/16-13:56:53.998 a88 Level-0 table #46: 45598 bytes OK
-2024/08/16-13:56:54.000 a88 Delete type=0 #43
+2024/08/19-08:07:45.243 1f84 Reusing MANIFEST C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/19-08:07:45.256 1f84 Recovering log #45
+2024/08/19-08:07:45.261 1f84 Reusing old log C:\Users\admin\TT\Profiles\baobao\Default\Local Storage\leveldb/000045.log 
+2024/08/19-08:09:47.060 1f84 Level-0 table #49: started
+2024/08/19-08:09:47.071 1f84 Level-0 table #49: 83728 bytes OK
+2024/08/19-08:09:47.077 1f84 Delete type=0 #45
+2024/08/19-08:09:47.079 1f84 Compacting 4@0 + 1@1 files
+2024/08/19-08:09:47.095 1f84 Generated table #50@0: 53 keys, 85224 bytes
+2024/08/19-08:09:47.095 1f84 Compacted 4@0 + 1@1 files => 85224 bytes
+2024/08/19-08:09:47.096 1f84 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/08/19-08:09:47.098 1f84 Delete type=2 #37
+2024/08/19-08:09:47.099 1f84 Delete type=2 #40
+2024/08/19-08:09:47.099 1f84 Delete type=2 #42
+2024/08/19-08:09:47.100 1f84 Delete type=2 #46
+2024/08/19-08:09:47.100 1f84 Delete type=2 #49

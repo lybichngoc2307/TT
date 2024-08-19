@@ -36,10 +36,10 @@ def create_profile(profile_name):
             print("created!")
             driver.get("https://www.tiktok.com/login/phone-or-email/email")
             #driver.quit()
-            # login.login_tiktok(driver)            
-            # print("login done!")
-            # login.select_two_obj(driver)
-            # print("bypass done!")
+            login.login_tiktok(driver)            
+            print("login done!")
+            login.select_two_obj(driver)
+            print("bypass done!")
         except:
             if not path.exists(profile_path):
                 print(f"Create Profile Fail: {profile_name}")

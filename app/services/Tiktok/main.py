@@ -61,8 +61,7 @@ def main():
                     print(f'Opening: {profile_name_open}')
                     thread = threading.Thread(target=lambda: drivers.append(manager_profiles(profile_name_open)))
                     thread.start()
-                    threads.append(thread)
-                
+                    threads.append(thread)               
                 for thread in threads:
                     thread.join()  
                 while True:
@@ -73,8 +72,7 @@ def main():
                     
                     if drivers:
                         perform_action(drivers, actions)  
-
-                    # Kiểm tra nếu tất cả các profile đã đóng, thoát khỏi vòng lặp
+                    
                     if not drivers:
                         print("All profiles have been closed.")
                         break
@@ -88,7 +86,6 @@ def main():
                 profile_name = profiles[profile_index - 1]
                 system('cls')
                 delete_profile(profile_name)
-
         elif option_choice == 4:
             clear_chrome_process()
         elif option_choice == 5:
